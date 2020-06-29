@@ -22,7 +22,7 @@ To edit this repository in MakeCode.
 
 This image shows the micro:bit settings for the Excel Datastreamer.
 
-![satastreamer config micro:bit](https://github.com/peterheldens/data-logger/raw/master/.github/makecode/excel datastremer settings for microbit.png)
+![Datastreamer config micro:bit](https://github.com/peterheldens/data-logger/raw/master/.github/makecode/excel-datastreamer-settings-for-microbit.png)
 
 
 ## Blocks preview
