@@ -28,7 +28,7 @@ radio.onReceivedValue(function (name, value) {
     }
 })
 let log_to_data_streamer = false
-basic.showString("m")
+basic.showString("M")
 radio.setGroup(101)
 radio.setTransmitPower(7)
 log_to_data_streamer = false

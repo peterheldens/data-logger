@@ -18,6 +18,13 @@ To edit this repository in MakeCode.
 * click on **Import** then click on **Import URL**
 * paste **https://github.com/peterheldens/data-logger** and click import
 
+## Settings Excel Datastreamer
+
+This image shows the micro:bit settings for the Excel Datastreamer.
+
+![satastreamer config micro:bit](https://github.com/peterheldens/data-logger/raw/master/.github/makecode/excel datastremer settings for microbit.png)
+
+
 ## Blocks preview
 
 This image shows the blocks code from the last commit in master.
