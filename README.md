@@ -12,11 +12,13 @@ The MakeCode script provided in this repository is designed to log data to one o
 - Press **Button A** to swith to **MakeCode** (this is the default)
 - Press **Button B** to swith to **Excel Data Streamer**
 
-Note: The micro:bit connection is limited to 1 stream at a time. So if the micro:bit is connected to MakeCode on the web, it can't be connected to Excel or the Windows 10 App.
+> [!IMPORTANT]
+> The micro:bit can be connected to exactly one target system at a time. So if the micro:bit is connected to MakeCode on the web, it can't be connected to Excel or the Windows 10 App. So to switch data logging from one target to the other, first *disconnect* the active connection first.
 
-Note: There is a seperate MakeCode Extension available for data streamer. See[pxt-hacking-stem](https://makecode.microbit.org/pkg/microsoft/pxt-hacking-stem). However, this extension is not (yet) used in this script.
+> [!NOTE]
+> There is a separate MakeCode Extension available for Data Streamer. This extension is not (yet) used in this repository. For more info, see [pxt-hacking-stem](https://makecode.microbit.org/pkg/microsoft/pxt-hacking-stem). 
 
-#### MakeCode Device Console data loggin provides:
+#### Data logger capabilities in MakeCode Device Console
 - real-time data logging
 - real-time visual graphics
 - recording of data
