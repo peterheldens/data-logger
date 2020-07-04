@@ -135,23 +135,27 @@ The MakeCode **Device Console** can show multiple graphs. Each graph can list *v
 ```
 This results in <<TODO insert picture here>>
 
-The Exel Data Streamer uses **predefined column names**. Writing key pairs of **name** & **value** would result in: 
+The Exel Data Streamer uses **predefined** column names *(CH1, CH2, .. CHn)*. Writing key pairs of **name,value** would result in cells listing *name=value* which is not desired. 
  <<TODO insert picture here>>. 
 
-To fill proper values into the Excel Data Streamer cells, we we use a sequence of multiple `writenumber(value)` actions.
-These are all seperated by `writestring(",")`. 
-To end of the sequence (i.e.: the end of a row in Excel) should be marked with a `writeline`. This is implemented as `writestring(" "):
+To properly fill values into the Excel Data Streamer cells, we use a sequence of multiple actions `writenumber(value)` seperated by `writeString(",")`. 
+The end of the sequence (i.e.: the end of a row in Excel) is marked using a `writeLine`:
 
-``` blocks
-        radio.onReceivedValue(function (name, value) {
-        serial.writeNumber(value)
+``` code
+        serial.writeNumber(value 0)
         serial.writeString(",")
-        serial.writeNumber(value)
+        ...
+        serial.writeNumber(value x)
         serial.writeString(",")
-        serial.writeNumber(value)
-        serial.writeString(" ")
+        ...
+        serial.writeNumber(value n) --> marked in this script as EOL
+        serial.writeLine("")
     }
 ```
+The script requires a EOL marker to detect the EndOfLine. 
+
+> [!TIP]
+> Programm the **sender** to send the last key pair (name, value) as ("EOL", `signalStrength()`).
 
 
 ## Blocks preview
