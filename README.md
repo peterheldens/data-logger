@@ -14,6 +14,8 @@ The MakeCode script provided in this repository is designed to log data to one o
 
 Note: The micro:bit connection is limited to 1 stream at a time. So if the micro:bit is connected to MakeCode on the web, it can't be connected to Excel or the Windows 10 App.
 
+Note: There is a seperate MakeCode Extension available for data streamer. See[pxt-hacking-stem](https://makecode.microbit.org/pkg/microsoft/pxt-hacking-stem). However, this extension is not (yet) used in this script.
+
 #### MakeCode Device Console data loggin provides:
 - real-time data logging
 - real-time visual graphics
