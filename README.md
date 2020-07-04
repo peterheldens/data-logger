@@ -3,13 +3,22 @@
 
 ## Micro:bit Data Logger
 
-This repository can be used to log data from your micro:bit to:
-- the **device console** in MakeCode on the **the web**
-- the **device console** in the MakeCode App on **Windows 10**
-- the **DataStreamer add-in** in **Microsoft Excel** using Microsoft 365
+This repository can be used to **log data** from the **micro:bit** to the:
+1. **Makecode Device Console** in a **Web browser**
+2. **Makecode Device Console** in the **Windows 10 App**
+3. **DataStreamer add-in** in **Microsoft Excel** using Microsoft 365
 
-[!NOTE]
-The micro:bit can be connected to only one (1) stream at a time.
+The MakeCode script provided in this repository is designed to log data to one of the options above: 
+- Press **Button A** to swith to **MakeCode** (this is the default)
+- Press **Button B** to swith to **Excel Data Streamer**
+
+Note: The micro:bit connection is limited to 1 stream at a time. So if the micro:bit is connected to MakeCode on the web, it can't be connected to Excel or the Windows 10 App.
+
+#### MakeCode Device Console data loggin provides:
+- real-time data logging
+- real-time visual graphics
+- recording of data
+- export of data to CSV & Excel for offline data analysis
 
 ## Edit this project ![Build status badge](https://github.com/peterheldens/data-logger/workflows/MakeCode/badge.svg)
 
