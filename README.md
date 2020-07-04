@@ -8,9 +8,6 @@ This repository can be used to **log data** from the **micro:bit** to the:
 2. **Makecode Device Console** in the **Windows 10 App**
 3. **DataStreamer add-in** in **Microsoft Excel** using Microsoft 365
 
-The MakeCode script provided in this repository is designed to log data to one of the options above: 
-- Press **Button A** to swith to **MakeCode** (this is the default)
-- Press **Button B** to swith to **Excel Data Streamer**
 
 > [!IMPORTANT]
 > The micro:bit can be connected to exactly one target system at a time. So if the micro:bit is connected to MakeCode on the web, it can't be connected to Excel or the Windows 10 App. So to switch data logging from one target to the other, first *disconnect* the active connection first.
@@ -107,6 +104,55 @@ To communicate Data Streamer with your micro:bit these following settings should
 
 ### Start streaming real-time data with the Data Streamer add-in
  Now it's time to start streaming it into Excel. Select the **Start Data** button on the Data Streamer tab. The data will stream into the Data In worksheet. More info on capturing data, sending data In and Out, and recording data is described  in [this article](https://support.microsoft.com/en-us/office/start-streaming-real-time-data-with-the-data-streamer-add-in-b6fac0bb-a495-423b-99eb-60c1f1e338d4).
+
+## Usage
+The MakeCode script provided in this repository is designed to log data to one of the options above: 
+- Press **Button A** to swith to **MakeCode** (this is the default)
+- Press **Button B** to swith to **Excel Data Streamer**
+
+```blocks
+// Press A to stream to makecode
+input.onButtonPressed(Button.A, function () {
+    log_to_data_streamer = false
+    basic.pause(100)
+    basic.clearScreen()
+    basic.showString("M")
+})
+// Press B to stream to excel datastreamer
+input.onButtonPressed(Button.B, function () {
+    log_to_data_streamer = true
+    basic.pause(100)
+    basic.clearScreen()
+    basic.showString("E")
+})
+```
+## Design considerations
+The MakeCode **Device Console** can show multiple graphs. Each graph can list *values names* by writing a key pair of **name** & **value**:
+```blocks
+    radio.onReceivedValue(function (name, value) {
+        serial.writeValue(name, value)
+    }
+```
+This results in <<TODO insert picture here>>
+
+The Exel Data Streamer uses **predefined column names**. Writing key pairs of **name** & **value** would result in: 
+ <<TODO insert picture here>>. 
+
+To fill proper values into the Excel Data Streamer cells, we we use a sequence of multiple `writenumber(value)` actions.
+These are all seperated by `writestring(",")`. 
+To end of the sequence (i.e.: the end of a row in Excel) should be marked with a `writeline`. This is implemented as `writestring(" "):
+
+``` blocks
+        radio.onReceivedValue(function (name, value) {
+        serial.writeNumber(value)
+        serial.writeString(",")
+        serial.writeNumber(value)
+        serial.writeString(",")
+        serial.writeNumber(value)
+        serial.writeString(" ")
+    }
+```
+
 
 ## Blocks preview
 
