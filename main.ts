@@ -15,15 +15,19 @@ input.onButtonPressed(Button.B, function () {
 radio.onReceivedValue(function (name, value) {
     if (log_to_data_streamer) {
         if (name == "eol") {
-            serial.writeNumber(value)
+            serial.writeNumber(radio.receivedPacket(RadioPacketProperty.SignalStrength))
             serial.writeLine("")
         } else {
             serial.writeNumber(value)
             serial.writeString(",")
-            led.toggle(4, 2)
         }
+        led.toggle(4, 2)
     } else {
-        serial.writeValue(name, value)
+        if (name == "eol") {
+            serial.writeValue(name, radio.receivedPacket(RadioPacketProperty.SignalStrength))
+        } else {
+            serial.writeValue(name, value)
+        }
         led.toggle(2, 4)
     }
 })

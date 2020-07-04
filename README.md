@@ -56,7 +56,7 @@ The following modern web browsers are supported:
 ## Data logging to Excel Data Streamer
 
 ### What is Data Streamer?
-Data Streamer empowers student inventors with a simple way to move data from the physical world in-and-out of Excel’s powerful digital canvas.  With a micro:bit, (built-in) sensors and Excel, Data Streamer introduces inventors to the worlds of data science, and the internet of things (IoT).
+Data Streamer empowers student inventors with a simple way to move data from the physical world in-and-out of Excel's powerful digital canvas.  With a micro:bit, (built-in) sensors and Excel, Data Streamer introduces inventors to the worlds of data science, and the internet of things (IoT).
 
 
 ### How it Works
@@ -106,7 +106,7 @@ To communicate Data Streamer with your micro:bit these following settings should
     ![Data Streamer config micro:bit](https://github.com/peterheldens/data-logger/raw/master/.github/makecode/excel-datastreamer-settings-for-microbit.png)
 
 ### Start streaming real-time data with the Data Streamer add-in
- Now it’s time to start streaming it into Excel. Select the **Start Data** button on the Data Streamer tab. The data will stream into the Data In worksheet. More info on capturing data, sending data In and Out, and recording data is described  in [this article](https://support.microsoft.com/en-us/office/start-streaming-real-time-data-with-the-data-streamer-add-in-b6fac0bb-a495-423b-99eb-60c1f1e338d4).
+ Now it's time to start streaming it into Excel. Select the **Start Data** button on the Data Streamer tab. The data will stream into the Data In worksheet. More info on capturing data, sending data In and Out, and recording data is described  in [this article](https://support.microsoft.com/en-us/office/start-streaming-real-time-data-with-the-data-streamer-add-in-b6fac0bb-a495-423b-99eb-60c1f1e338d4).
 
 ## Blocks preview
 
